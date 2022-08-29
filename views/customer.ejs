@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Preencha os campos abaixo para cadastrar um cliente. </p>
+    <form action="">
+        <fieldset>
+            <legend>Dados Cadastrais</legend>
+            <p>
+                Nome: <input type="text" name="nome">
+            </p>
+            <p>
+                Idade: <input type="number" name="idade">
+            </p>
+            <p>
+                Região: <input type="text" name="cidade">
+                <select name="uf" id="">
+                    <option value="">PB</option>
+                    <option value="">RS</option>
+                    <option value="">SC</option>
+                    <option value="">PR</option>
+                </select>
+            </p>
+            <p>
+                <input type="submit" value="Salvar">
+                <a href="/">Cancelar</a>
+            </p>
+        </fieldset>
+    </form>
+</body>
+
+</html>
