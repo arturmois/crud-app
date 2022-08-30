@@ -40,6 +40,12 @@
             <%= item.cidade %>
               <%= item.uf %>
           </td>
+          <td><a href="/edit/<%= item._id %>">
+              <img src="/images/edit.png" title="Editar">
+            </a><a href="/delete/<%= item._id %>">
+              <img src="/images/delete.png" title="Deletar"
+                onclick=" return confirm('Tem certeza que deseja excluir esse cliente?')">
+            </a></td>
         </tr>
         <% }) %>
     </tbody>

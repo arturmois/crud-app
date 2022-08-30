@@ -12,30 +12,39 @@
         <%= title %>
     </h1>
     <p>Preencha os campos abaixo para cadastrar um cliente. </p>
-    <form action="">
+    <form action="/new" method="POST">
         <fieldset>
             <legend>Dados Cadastrais</legend>
             <p>
-                Nome: <input type="text" name="nome">
+                Nome: <input type="text" name="nome" value="<%= customer.nome %>">
             </p>
             <p>
-                Idade: <input type="number" name="idade">
+                Idade: <input type="number" name="idade" value="<%= customer.idade %>">
             </p>
             <p>
-                Região: <input type="text" name="cidade">
-                <select name="uf" id="">
-                    <option value="">PB</option>
-                    <option value="">RS</option>
-                    <option value="">SC</option>
-                    <option value="">PR</option>
+                Região: <input type="text" name="cidade" value="<%= customer.cidade %>">
+                <select name="uf" value="<%= customer.uf %>">
+                    <option ><%= customer.uf %></option>
+                    <option >PB</option>
+                    <option >RS</option>
+                    <option >SC</option>
+                    <option >PR</option>
                 </select>
             </p>
+            <input type="hidden" name="id" value="<%= customer.id %>">
             <p>
                 <input type="submit" value="Salvar">
                 <a href="/">Cancelar</a>
             </p>
         </fieldset>
     </form>
+    <script>
+        if (window.location.search) {
+            const error = window.location.search.split('=')[1]
+            alert(decodeURI(error));
+        }
+
+    </script>
 </body>
 
 </html>
