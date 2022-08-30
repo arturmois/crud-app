@@ -3,7 +3,7 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectId;
 
 MongoClient.connect(
-    "mongodb://localhost:27017",
+    process.env.MONGODB_CONNECTION,
     { useUnifiedTopology: true })
     .then(connection => {
         global.connection = connection.db("crudApp");
